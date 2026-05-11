@@ -1,0 +1,220 @@
+[INFO] 2019-10-17 11:46:52 root() : Start parsing the plugin vrops
+[INFO] 2019-10-17 11:46:52 util.rest_client() : Sending POST request on url : https://172.30.9.184/suite-api/api//auth/token/acquire
+[DEBUG] 2019-10-17 11:46:52 urllib3.connectionpool() : Starting new HTTPS connection (1): 172.30.9.184:443
+[DEBUG] 2019-10-17 11:46:52 urllib3.connectionpool() : https://172.30.9.184:443 "POST /suite-api/api//auth/token/acquire HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:46:52 util.rest_client() : Response for the Post Request is : <Response [200]>
+[INFO] 2019-10-17 11:46:52 util.rest_client() : Sending GET request on url : https://172.30.9.184/suite-api/api/alerts?pageSize=5000
+[DEBUG] 2019-10-17 11:46:52 urllib3.connectionpool() : Starting new HTTPS connection (1): 172.30.9.184:443
+[DEBUG] 2019-10-17 11:46:52 urllib3.connectionpool() : https://172.30.9.184:443 "GET /suite-api/api/alerts?pageSize=5000 HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:46:52 util.rest_client() : Response for the Get Request is : <Response [200]>
+[INFO] 2019-10-17 11:46:52 plugins.vrops.log_parser() : list_of_tickets_to_be_created : []
+[INFO] 2019-10-17 11:46:52 root() : No tickets to be generated.
+[INFO] 2019-10-17 11:46:52 root() : End parsing the plugin vrops
+[INFO] 2019-10-17 11:19:22 root() : Start parsing the plugin file
+[INFO] 2019-10-17 11:19:22 database.database_util() : Database already exists
+[INFO] 2019-10-17 11:19:22 database.database_util() : New table with the name: LOG_PARSING_RECORD has been created
+[INFO] 2019-10-17 11:19:30 plugins.file.log_parser() : Files : ['log\\vrops.log']
+[INFO] 2019-10-17 11:19:30 plugins.file.log_parser() : Checking if log\vrops.log file has been modified/created/changed.
+[INFO] 2019-10-17 11:19:34 plugins.file.log_parser() : log\vrops.log file has not been parsed yet.
+[DEBUG] 2019-10-17 11:19:34 asyncio() : Using selector: SelectSelector
+[DEBUG] 2019-10-17 11:19:34 plugins.file.log_parser() : Converting data into dataframe================
+[DEBUG] 2019-10-17 11:19:35 plugins.file.log_parser() : Ended data into dataframe================
+[INFO] 2019-10-17 11:19:35 plugins.file.log_parser() : line matched with a rule. Hence, adding the ticket - {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}
+[INFO] 2019-10-17 11:19:35 plugins.file.log_parser() : line matched with a rule. Hence, adding the ticket - {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}
+[INFO] 2019-10-17 11:19:35 plugins.file.log_parser() : List of 2 tickets : [{'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}, {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}]
+[DEBUG] 2019-10-17 11:19:35 asyncio() : Using selector: SelectSelector
+[INFO] 2019-10-17 11:19:35 root() : Candidate tickets : [{'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}, {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}]
+[INFO] 2019-10-17 11:19:35 root() : Incident : True
+[INFO] 2019-10-17 11:19:35 root() : Ticket : {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}
+[INFO] 2019-10-17 11:19:35 database.sqlalchemy_script() : Open entry for incident_id: INC0010431 already exists
+[INFO] 2019-10-17 11:19:35 root() : Found similar ticket in DB. Checking for its status from service now.
+[INFO] 2019-10-17 11:19:35 util.rest_client() : Sending GET request on url : https://dev78075.service-now.com/api/now/v1/table/incident/a20799211b200010ac962f86ec4bcbb7
+[DEBUG] 2019-10-17 11:19:35 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:19:37 urllib3.connectionpool() : https://dev78075.service-now.com:443 "GET /api/now/v1/table/incident/a20799211b200010ac962f86ec4bcbb7 HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:19:37 util.rest_client() : Response for the Get Request is : <Response [200]>
+[INFO] 2019-10-17 11:19:37 service_now.incident_ops() : Returned State of the incident with sys_id a20799211b200010ac962f86ec4bcbb7 is : 1
+[INFO] 2019-10-17 11:19:37 database.sqlalchemy_script() : Ticket creation time for sys_id a20799211b200010ac962f86ec4bcbb7 is 2019-10-17 11:11:03.278409
+[INFO] 2019-10-17 11:19:37 root() : Similar ticket is still open. Hence, not creating a new ticket until the earlier one is resolved.
+[INFO] 2019-10-17 11:19:37 root() : Incident : True
+[INFO] 2019-10-17 11:19:37 root() : Ticket : {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}
+[INFO] 2019-10-17 11:19:37 database.sqlalchemy_script() : Open entry for incident_id: INC0010432 already exists
+[INFO] 2019-10-17 11:19:37 root() : Found similar ticket in DB. Checking for its status from service now.
+[INFO] 2019-10-17 11:19:37 util.rest_client() : Sending GET request on url : https://dev78075.service-now.com/api/now/v1/table/incident/5b07d9211b200010ac962f86ec4bcb3e
+[DEBUG] 2019-10-17 11:19:37 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:19:39 urllib3.connectionpool() : https://dev78075.service-now.com:443 "GET /api/now/v1/table/incident/5b07d9211b200010ac962f86ec4bcb3e HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:19:39 util.rest_client() : Response for the Get Request is : <Response [200]>
+[INFO] 2019-10-17 11:19:39 service_now.incident_ops() : Returned State of the incident with sys_id 5b07d9211b200010ac962f86ec4bcb3e is : 1
+[INFO] 2019-10-17 11:19:39 database.sqlalchemy_script() : Ticket creation time for sys_id 5b07d9211b200010ac962f86ec4bcb3e is 2019-10-17 11:11:05.365637
+[INFO] 2019-10-17 11:19:39 root() : Similar ticket is still open. Hence, not creating a new ticket until the earlier one is resolved.
+[INFO] 2019-10-17 11:19:39 root() : End parsing the plugin file
+
+[INFO] 2019-10-17 11:00:17 root() : Start parsing the plugin file
+[INFO] 2019-10-17 11:00:17 database.database_util() : Database already exists
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : ()
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : ()
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : PRAGMA main.table_info("LOG_PARSING_RECORD")
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : ()
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : PRAGMA temp.table_info("LOG_PARSING_RECORD")
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : ()
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : 
+CREATE TABLE "LOG_PARSING_RECORD" (
+	filename VARCHAR, 
+	created_time VARCHAR, 
+	modified_time VARCHAR, 
+	line_number INTEGER
+)
+
+
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : ()
+[INFO] 2019-10-17 11:00:17 sqlalchemy.engine.base.Engine() : COMMIT
+[INFO] 2019-10-17 11:00:17 database.database_util() : New table with the name: LOG_PARSING_RECORD has been created
+[INFO] 2019-10-17 11:00:23 plugins.file.log_parser() : Files : ['log\\vrops.log']
+[INFO] 2019-10-17 11:00:24 plugins.file.log_parser() : Checking if log\vrops.log file has been modified/created/changed.
+[INFO] 2019-10-17 11:00:31 sqlalchemy.engine.base.Engine() : SELECT "LOG_PARSING_RECORD".filename, "LOG_PARSING_RECORD".created_time, "LOG_PARSING_RECORD".modified_time, "LOG_PARSING_RECORD".line_number 
+FROM "LOG_PARSING_RECORD" 
+WHERE "LOG_PARSING_RECORD".filename = ? AND "LOG_PARSING_RECORD".created_time = ? AND "LOG_PARSING_RECORD".modified_time = ?
+[INFO] 2019-10-17 11:00:31 sqlalchemy.engine.base.Engine() : ('log\\vrops.log', 1571136517.6512647, 1571136517.6512647)
+[INFO] 2019-10-17 11:00:34 plugins.file.log_parser() : log\vrops.log file has not been parsed yet.
+[DEBUG] 2019-10-17 11:01:01 asyncio() : Using selector: SelectSelector
+[DEBUG] 2019-10-17 11:01:01 plugins.file.log_parser() : Converting data into dataframe================
+[DEBUG] 2019-10-17 11:01:02 plugins.file.log_parser() : Ended data into dataframe================
+[INFO] 2019-10-17 11:01:02 plugins.file.log_parser() : line matched with a rule. Hence, adding the ticket - {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}
+[INFO] 2019-10-17 11:01:02 plugins.file.log_parser() : line matched with a rule. Hence, adding the ticket - {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}
+[INFO] 2019-10-17 11:01:02 plugins.file.log_parser() : List of 2 tickets : [{'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}, {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}]
+[DEBUG] 2019-10-17 11:01:36 asyncio() : Using selector: SelectSelector
+[INFO] 2019-10-17 11:01:36 root() : Candidate tickets : [{'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}, {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}]
+[INFO] 2019-10-17 11:01:36 root() : Incident : True
+[INFO] 2019-10-17 11:01:36 root() : Ticket : {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* Inbound Frames Discard is Increasing', 'resource_index': 1, 'incident': True, 'short_description': 'Inbound Frames Discard is Increasing', 'description': 'Inbound Frames Discard is Increasing. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '3fecf365-7afe-40d4-9b1d-efc4642dfc85'}
+[INFO] 2019-10-17 11:01:36 sqlalchemy.engine.base.Engine() : SELECT "TICKET_INFO".incident_id, "TICKET_INFO".subcategory, "TICKET_INFO".id, "TICKET_INFO".category, "TICKET_INFO".status, "TICKET_INFO".sys_id, "TICKET_INFO".sla_missed_count, "TICKET_INFO".resolution, "TICKET_INFO".ticket_creation_time, "TICKET_INFO".resolved_by, "TICKET_INFO".email_address, "TICKET_INFO".short_description 
+FROM "TICKET_INFO" 
+WHERE "TICKET_INFO".id = ? AND "TICKET_INFO".category = ? AND "TICKET_INFO".subcategory = ? AND "TICKET_INFO".status = ?
+[INFO] 2019-10-17 11:01:36 sqlalchemy.engine.base.Engine() : ('3fecf365-7afe-40d4-9b1d-efc4642dfc85', 'Software', 'Internal Application', 'open')
+[INFO] 2019-10-17 11:01:36 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:01:36 sqlalchemy.engine.base.Engine() : SELECT "TICKET_INFO".incident_id, "TICKET_INFO".subcategory, "TICKET_INFO".id, "TICKET_INFO".category, "TICKET_INFO".status, "TICKET_INFO".sys_id, "TICKET_INFO".sla_missed_count, "TICKET_INFO".resolution, "TICKET_INFO".ticket_creation_time, "TICKET_INFO".resolved_by, "TICKET_INFO".email_address, "TICKET_INFO".short_description 
+FROM "TICKET_INFO" 
+WHERE "TICKET_INFO".category = ? AND "TICKET_INFO".subcategory = ? AND "TICKET_INFO".short_description = ? AND "TICKET_INFO".status != ? ORDER BY "TICKET_INFO".ticket_creation_time DESC
+ LIMIT ? OFFSET ?
+[INFO] 2019-10-17 11:01:36 sqlalchemy.engine.base.Engine() : ('Software', 'Internal Application', 'Inbound Frames Discard is Increasing', 'open', 5, 0)
+[INFO] 2019-10-17 11:01:36 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:01:36 service_now.incident_ops() : Creating incident with params : {"short_description": "Inbound Frames Discard is Increasing", "description": "Inbound Frames Discard is Increasing. Please look into alerts for more information", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:01:36 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:01:36 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:01:38 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:01:38 util.rest_client() : Response for the Post Request is : <Response [200]>
+[ERROR] 2019-10-17 11:01:38 util.rest_client() : Unable to initiate rest call : Expecting value: line 1 column 1 (char 0)
+[INFO] 2019-10-17 11:01:38 root() : Incident : True
+[INFO] 2019-10-17 11:01:38 root() : Ticket : {'regx': '.*resourceId : ([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}).* License will soon expire', 'resource_index': 1, 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'e1bfb78f-cf75-44bc-a65d-87e5fade4464'}
+[INFO] 2019-10-17 11:01:38 sqlalchemy.engine.base.Engine() : SELECT "TICKET_INFO".incident_id, "TICKET_INFO".subcategory, "TICKET_INFO".id, "TICKET_INFO".category, "TICKET_INFO".status, "TICKET_INFO".sys_id, "TICKET_INFO".sla_missed_count, "TICKET_INFO".resolution, "TICKET_INFO".ticket_creation_time, "TICKET_INFO".resolved_by, "TICKET_INFO".email_address, "TICKET_INFO".short_description 
+FROM "TICKET_INFO" 
+WHERE "TICKET_INFO".id = ? AND "TICKET_INFO".category = ? AND "TICKET_INFO".subcategory = ? AND "TICKET_INFO".status = ?
+[INFO] 2019-10-17 11:01:38 sqlalchemy.engine.base.Engine() : ('e1bfb78f-cf75-44bc-a65d-87e5fade4464', 'Software', 'Internal Application', 'open')
+[INFO] 2019-10-17 11:01:38 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:01:38 sqlalchemy.engine.base.Engine() : SELECT "TICKET_INFO".incident_id, "TICKET_INFO".subcategory, "TICKET_INFO".id, "TICKET_INFO".category, "TICKET_INFO".status, "TICKET_INFO".sys_id, "TICKET_INFO".sla_missed_count, "TICKET_INFO".resolution, "TICKET_INFO".ticket_creation_time, "TICKET_INFO".resolved_by, "TICKET_INFO".email_address, "TICKET_INFO".short_description 
+FROM "TICKET_INFO" 
+WHERE "TICKET_INFO".category = ? AND "TICKET_INFO".subcategory = ? AND "TICKET_INFO".short_description = ? AND "TICKET_INFO".status != ? ORDER BY "TICKET_INFO".ticket_creation_time DESC
+ LIMIT ? OFFSET ?
+[INFO] 2019-10-17 11:01:38 sqlalchemy.engine.base.Engine() : ('Software', 'Internal Application', 'License will expire soon', 'open', 5, 0)
+[INFO] 2019-10-17 11:01:38 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:01:38 service_now.incident_ops() : Creating incident with params : {"short_description": "License will expire soon", "description": "License will expire soon. Kindly renew it as soon as possible.", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:01:38 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:01:38 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:01:39 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:01:39 util.rest_client() : Response for the Post Request is : <Response [200]>
+[ERROR] 2019-10-17 11:01:39 util.rest_client() : Unable to initiate rest call : Expecting value: line 1 column 1 (char 0)
+[INFO] 2019-10-17 11:01:54 root() : End parsing the plugin file
+
+[INFO] 2019-10-17 10:56:23 root() : Start parsing the plugin vrops
+[INFO] 2019-10-17 10:56:23 util.rest_client() : Sending POST request on url : https://172.30.9.184/suite-api/api//auth/token/acquire
+[DEBUG] 2019-10-17 10:56:23 urllib3.connectionpool() : Starting new HTTPS connection (1): 172.30.9.184:443
+[ERROR] 2019-10-17 10:56:44 util.rest_client() : Unable to initiate rest call : HTTPSConnectionPool(host='172.30.9.184', port=443): Max retries exceeded with url: /suite-api/api//auth/token/acquire (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x0A11CED0>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond'))
+[ERROR] 2019-10-17 10:56:44 plugins.vrops.log_parser() : Error getting token for vROps : 'NoneType' object is not subscriptable
+[ERROR] 2019-10-17 10:56:44 plugins.vrops.log_parser() : Error getting alerts list from vROps : can only concatenate str (not "NoneType") to str
+[INFO] 2019-10-17 10:56:44 plugins.vrops.log_parser() : list_of_tickets_to_be_created : []
+[INFO] 2019-10-17 10:56:44 root() : No tickets to be generated. Everything is working as expected.
+[INFO] 2019-10-17 10:56:44 root() : End parsing the plugin vrops
+[INFO] 2019-10-17 11:42:01 root() : Start parsing the plugin vrops
+[INFO] 2019-10-17 11:42:03 util.rest_client() : Sending POST request on url : https://172.30.9.184/suite-api/api//auth/token/acquire
+[DEBUG] 2019-10-17 11:42:04 urllib3.connectionpool() : Starting new HTTPS connection (1): 172.30.9.184:443
+[DEBUG] 2019-10-17 11:42:04 urllib3.connectionpool() : https://172.30.9.184:443 "POST /suite-api/api//auth/token/acquire HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:42:04 util.rest_client() : Response for the Post Request is : <Response [200]>
+[INFO] 2019-10-17 11:42:05 util.rest_client() : Sending GET request on url : https://172.30.9.184/suite-api/api/alerts?pageSize=5000
+[DEBUG] 2019-10-17 11:42:05 urllib3.connectionpool() : Starting new HTTPS connection (1): 172.30.9.184:443
+[DEBUG] 2019-10-17 11:42:05 urllib3.connectionpool() : https://172.30.9.184:443 "GET /suite-api/api/alerts?pageSize=5000 HTTP/1.1" 200 None
+[DEBUG] 2019-10-17 11:42:05 util.rest_client() : Response for the Get Request is : <Response [200]>
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine disk I/O write latency is high
+[INFO] 2019-10-17 11:42:06 plugins.vrops.log_parser() : alert matched with a rule. Hence, adding the ticket - {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '89f99dbd-1a01-463b-90ad-5725dd65b2a8'}
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Fully-automated DRS-enabled cluster has high CPU workload
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine disk I/O write latency is high
+[INFO] 2019-10-17 11:42:06 plugins.vrops.log_parser() : alert matched with a rule. Hence, adding the ticket - {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '81f2770b-d276-4a21-9c00-c0df7b9134dd'}
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine disk I/O read latency is high
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert vSphere High Availability (HA) failover resources are insufficient
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine disk I/O write latency is high
+[INFO] 2019-10-17 11:42:06 plugins.vrops.log_parser() : alert matched with a rule. Hence, adding the ticket - {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'a66ff580-5316-4959-bc6d-48fc756a77fb'}
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine is running on snapshots for more than 2 days
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert Virtual machine is running on snapshots for more than 2 days
+[DEBUG] 2019-10-17 11:42:06 plugins.vrops.log_parser() : Processing the alert License will soon expire
+[INFO] 2019-10-17 11:42:06 plugins.vrops.log_parser() : alert matched with a rule. Hence, adding the ticket - {'regx': 'License will soon expire', 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '4efc5055-f823-4636-b8c9-fa561d6c5e4e'}
+[INFO] 2019-10-17 11:42:08 plugins.vrops.log_parser() : list_of_tickets_to_be_created : [{'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '89f99dbd-1a01-463b-90ad-5725dd65b2a8'}, {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '81f2770b-d276-4a21-9c00-c0df7b9134dd'}, {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'a66ff580-5316-4959-bc6d-48fc756a77fb'}, {'regx': 'License will soon expire', 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '4efc5055-f823-4636-b8c9-fa561d6c5e4e'}]
+[DEBUG] 2019-10-17 11:42:26 asyncio() : Using selector: SelectSelector
+[INFO] 2019-10-17 11:42:26 root() : Candidate tickets : [{'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '89f99dbd-1a01-463b-90ad-5725dd65b2a8'}, {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '81f2770b-d276-4a21-9c00-c0df7b9134dd'}, {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'a66ff580-5316-4959-bc6d-48fc756a77fb'}, {'regx': 'License will soon expire', 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '4efc5055-f823-4636-b8c9-fa561d6c5e4e'}]
+[INFO] 2019-10-17 11:42:26 root() : Incident : True
+[INFO] 2019-10-17 11:42:26 root() : Ticket : {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '89f99dbd-1a01-463b-90ad-5725dd65b2a8'}
+[INFO] 2019-10-17 11:42:26 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:42:26 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:42:26 service_now.incident_ops() : Creating incident with params : {"short_description": "Virtual machine disk I/O write latency is high", "description": "Virtual machine disk I/O write latency is high. Please look into alerts for more information", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:42:26 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:42:26 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:42:28 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 201 None
+[DEBUG] 2019-10-17 11:42:28 util.rest_client() : Response for the Post Request is : <Response [201]>
+[INFO] 2019-10-17 11:42:28 service_now.incident_ops() : Incident created successfully with sys_id : c73e99211b200010ac962f86ec4bcbcd incident number : INC0010433 
+[INFO] 2019-10-17 11:42:28 database.sqlalchemy_script() : c73e99211b200010ac962f86ec4bcbcd
+[INFO] 2019-10-17 11:42:28 database.sqlalchemy_script() : INC0010433
+[INFO] 2019-10-17 11:42:29 database.sqlalchemy_script() : New entry created in Database
+[INFO] 2019-10-17 11:42:29 root() : Ticket created successfully!!
+[INFO] 2019-10-17 11:42:29 root() : Incident : True
+[INFO] 2019-10-17 11:42:29 root() : Ticket : {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '81f2770b-d276-4a21-9c00-c0df7b9134dd'}
+[INFO] 2019-10-17 11:42:29 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:42:29 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:42:29 service_now.incident_ops() : Creating incident with params : {"short_description": "Virtual machine disk I/O write latency is high", "description": "Virtual machine disk I/O write latency is high. Please look into alerts for more information", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:42:29 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:42:29 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:42:31 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 201 None
+[DEBUG] 2019-10-17 11:42:31 util.rest_client() : Response for the Post Request is : <Response [201]>
+[INFO] 2019-10-17 11:42:31 service_now.incident_ops() : Incident created successfully with sys_id : f33ed9211b200010ac962f86ec4bcb0e incident number : INC0010434 
+[INFO] 2019-10-17 11:42:31 database.sqlalchemy_script() : f33ed9211b200010ac962f86ec4bcb0e
+[INFO] 2019-10-17 11:42:31 database.sqlalchemy_script() : INC0010434
+[INFO] 2019-10-17 11:42:31 database.sqlalchemy_script() : New entry created in Database
+[INFO] 2019-10-17 11:42:32 root() : Ticket created successfully!!
+[INFO] 2019-10-17 11:42:32 root() : Incident : True
+[INFO] 2019-10-17 11:42:32 root() : Ticket : {'regx': 'Virtual machine disk I/O write latency is high', 'incident': True, 'short_description': 'Virtual machine disk I/O write latency is high', 'description': 'Virtual machine disk I/O write latency is high. Please look into alerts for more information', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': 'a66ff580-5316-4959-bc6d-48fc756a77fb'}
+[INFO] 2019-10-17 11:42:32 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:42:32 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:42:32 service_now.incident_ops() : Creating incident with params : {"short_description": "Virtual machine disk I/O write latency is high", "description": "Virtual machine disk I/O write latency is high. Please look into alerts for more information", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:42:32 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:42:32 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:42:33 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 201 None
+[DEBUG] 2019-10-17 11:42:34 util.rest_client() : Response for the Post Request is : <Response [201]>
+[INFO] 2019-10-17 11:42:34 service_now.incident_ops() : Incident created successfully with sys_id : d84ed9211b200010ac962f86ec4bcb43 incident number : INC0010435 
+[INFO] 2019-10-17 11:42:34 database.sqlalchemy_script() : d84ed9211b200010ac962f86ec4bcb43
+[INFO] 2019-10-17 11:42:34 database.sqlalchemy_script() : INC0010435
+[INFO] 2019-10-17 11:42:34 database.sqlalchemy_script() : New entry created in Database
+[INFO] 2019-10-17 11:42:34 root() : Ticket created successfully!!
+[INFO] 2019-10-17 11:42:34 root() : Incident : True
+[INFO] 2019-10-17 11:42:34 root() : Ticket : {'regx': 'License will soon expire', 'incident': True, 'short_description': 'License will expire soon', 'description': 'License will expire soon. Kindly renew it as soon as possible.', 'priority': 3, 'category': 'Software', 'subcategory': 'Internal Application', 'id': '4efc5055-f823-4636-b8c9-fa561d6c5e4e'}
+[INFO] 2019-10-17 11:42:34 root() : No similar ticket exists. Hence creating a new ticket on service now.
+[INFO] 2019-10-17 11:42:34 root() : Added suggestion while creating a new similar ticket.
+[INFO] 2019-10-17 11:42:34 service_now.incident_ops() : Creating incident with params : {"short_description": "License will expire soon", "description": "License will expire soon. Kindly renew it as soon as possible.", "priority": 3, "category": "Software", "subcategory": "Internal Application"}
+[INFO] 2019-10-17 11:42:34 util.rest_client() : Sending POST request on url : https://dev78075.service-now.com/api/now/v1/table/incident
+[DEBUG] 2019-10-17 11:42:34 urllib3.connectionpool() : Starting new HTTPS connection (1): dev78075.service-now.com:443
+[DEBUG] 2019-10-17 11:42:36 urllib3.connectionpool() : https://dev78075.service-now.com:443 "POST /api/now/v1/table/incident HTTP/1.1" 201 None
+[DEBUG] 2019-10-17 11:42:36 util.rest_client() : Response for the Post Request is : <Response [201]>
+[INFO] 2019-10-17 11:42:36 service_now.incident_ops() : Incident created successfully with sys_id : 8d4ed9211b200010ac962f86ec4bcb11 incident number : INC0010436 
+[INFO] 2019-10-17 11:42:36 database.sqlalchemy_script() : 8d4ed9211b200010ac962f86ec4bcb11
+[INFO] 2019-10-17 11:42:36 database.sqlalchemy_script() : INC0010436
+[INFO] 2019-10-17 11:42:36 database.sqlalchemy_script() : New entry created in Database
+[INFO] 2019-10-17 11:42:36 root() : Ticket created successfully!!
+[INFO] 2019-10-17 11:42:36 root() : creation_table_list : [['89f99dbd-1a01-463b-90ad-5725dd65b2a8', 'INC0010433', 'Virtual machine disk I/O write latency is high'], ['81f2770b-d276-4a21-9c00-c0df7b9134dd', 'INC0010434', 'Virtual machine disk I/O write latency is high'], ['a66ff580-5316-4959-bc6d-48fc756a77fb', 'INC0010435', 'Virtual machine disk I/O write latency is high'], ['4efc5055-f823-4636-b8c9-fa561d6c5e4e', 'INC0010436', 'License will expire soon']]
+[ERROR] 2019-10-17 11:42:40 util.smtp_server() : Error: unable to send email (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials v3sm1080198pfn.18 - gsmtp')
+[INFO] 2019-10-17 11:42:40 root() : End parsing the plugin vrops
